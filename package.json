@@ -1,0 +1,36 @@
+{
+  "name": "node-dev-task-bitly",
+  "version": "1.0.0",
+  "description": "REST API to URL Shortener Development Task for node.js",
+  "main": "build/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/app.js",
+    "build": "npm run build-app && npm run build-src",
+    "build-app": "babel app.js  --out-dir ./build",
+    "build-src": "babel ./src  --out-dir ./build/src --copy-files",
+    "dev-start": "babel-watch --watch src app.js"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "URL",
+    "Shortener",
+    "node.js"
+  ],
+  "author": "Cromwell Bayon <omelsoft@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-watch": "^7.0.0"
+  }
+}

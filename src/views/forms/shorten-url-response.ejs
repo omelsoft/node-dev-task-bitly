@@ -1,0 +1,28 @@
+<!-- ../partials/header.ejs -->
+<% include ../partials/header.ejs %>
+
+<!-- ../partials/nav.ejs -->
+<% include ../partials/nav.ejs %>
+
+<div class="container-fluid p-0" style="margin-top: 20px">
+   <section class="intro-section p-3 p-lg-5 d-flex d-column" id="intro">
+      <div class="jumbotron p-5">
+         <!-- ../partials/intro.ejs -->
+         <% include ../partials/intro.ejs %>
+
+         <!-- ../forms/shorten-url.ejs -->
+         <% include ../forms/shorten-url.ejs %>
+
+         <% if (!data.new_hash) { %>
+         The short URL <a href="<%= data.url %>" target="_blank"><%= data.url %></a> for <a href="<%= data.long_url %>" target="_blank"><%= data.long_url %></a> already exists.
+         <% } else { %>
+
+         <p>Short URL has been successfully generated.</p>
+         <% } %>
+
+      </div>
+   </section>
+</div>
+
+<!-- ../partials/footer.ejs -->
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,32 @@
+<!-- ../partials/header.ejs -->
+<% include ../partials/header.ejs %>
+
+<!-- ../partials/nav.ejs -->
+<% include ../partials/nav.ejs %>
+
+<div class="container-fluid p-0" style="margin-top: 20px">
+   <section class="into-section p-2 p-lg-5 d-flex d-column" id="about">
+      <div class="jumbotron">
+         <!-- ../partials/intro.ejs -->
+         <% include ../partials/intro.ejs %>
+
+         <form class="mb-3" action="/shorten" method="post">
+            <div class="input-group mb-3">
+               <input type="text" id="url" name="url" class="form-control border border-danger" placeholder="Enter a long URL here (e.g. https://www.google.com)" aria-describedby="basic-addon2">
+               <div class="input-group-append">
+                  <button type="submit" class="btn btn-primary">Shorten Url</button>
+               </div>
+            </div>
+         </form>
+
+         <% if(data.message.status_txt === 'INVALID_URI') { %>
+            <span class="text-danger">Please input a valid URL.</span>
+         <% } else { %>
+            <span class="text-danger"><%= data.message.status_txt %>.</span>
+         <% } %>
+      </div>
+   </section>
+</div>
+
+<!-- ../partials/footer.ejs -->
+<% include ../partials/footer.ejs %>
