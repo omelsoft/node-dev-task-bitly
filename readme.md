@@ -68,7 +68,7 @@ Open [http://localhost:3000](http://localhost:3000), on your browser. Or press C
 ## Shortening URL
 
 * Enter the URL you want to shorten in the input field.
-* A message will be shown below the input field after a request is be completed.
+* A message will be shown below the input field after a request is completed.
 
 ## Logs
 
